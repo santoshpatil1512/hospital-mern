@@ -27,7 +27,7 @@ const Patients = () => {
 			e.preventDefault();
 
 			axios.post(
-'http://localhost:5000/patients/add', newPatient)
+'https://hospital-mern-fdm1.onrender.com/patients/add', newPatient)
 				.then(response => {
 					console.log(response.data);
 					setPatients([...patients, response.data]);
@@ -42,7 +42,7 @@ const Patients = () => {
 			e.preventDefault();
 
 			axios.post(
-`http://localhost:5000/patients/update/${id}`, selectedPatient)
+`https://hospital-mern-fdm1.onrender.com/patients/update/${id}`, selectedPatient)
 				.then(response => {
 					const updatePat = {
 						...selectedPatient,
@@ -68,7 +68,7 @@ const Patients = () => {
 	const handleDeletePatient =
 		(id) => {
 			axios.delete(
-`http://localhost:5000/patients/delete/${id}`)
+`https://hospital-mern-fdm1.onrender.com/patients/delete/${id}`)
 				.then(response => {
 					console.log(response.data);
 					setSelectedPatient(null);
