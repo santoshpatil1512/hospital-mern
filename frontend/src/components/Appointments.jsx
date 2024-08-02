@@ -24,7 +24,7 @@ const Appointments = () => {
 	useEffect(() => {
 		axios
 			.get(
-'http://localhost:5000/appointments')
+'https://hospital-mern-fdm1.onrender.com/appointments')
 			.then(
 				response =>
 					setAppointments(response.data))
@@ -40,7 +40,7 @@ const Appointments = () => {
 
 			axios
 				.post(
-'http://localhost:5000/appointments/add', newAppointment)
+'https://hospital-mern-fdm1.onrender.com/appointments/add', newAppointment)
 				.then(response => {
 					console.log(response.data);
 					setAppointments(
@@ -62,7 +62,7 @@ const Appointments = () => {
 			e.preventDefault();
 			axios
 				.post(
-`http://localhost:5000/appointments/update/${id}`, selectedAppointment)
+`https://hospital-mern-fdm1.onrender.com/appointments/update/${id}`, selectedAppointment)
 				.then(response => {
 					console.log(response.data);
 					const updateApp = {
@@ -88,7 +88,7 @@ const Appointments = () => {
 		(id) => {
 			axios
 				.delete(
-`http://localhost:5000/appointments/delete/${id}`)
+`https://hospital-mern-fdm1.onrender.com/appointments/delete/${id}`)
 				.then(response => {
 					console.log(response.data);
 					setAppointments(
